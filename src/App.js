@@ -1,7 +1,20 @@
+import React, { useContext, useEffect } from 'react'
+
+import { MoviesContext } from './context/movies/moviesContext'
+
+import MovieCard from './components/MovieCard/MovieCard'
+
 function App() {
+	const { movies, fetchMovies } = useContext(MoviesContext)
+
+	useEffect(() => {
+		fetchMovies()
+	}, [])
 	return (
 		<div className='App'>
-			<h1>Movies App</h1>
+			<div className='movie-container'>
+				{movies.length && movies.map(movie => <MovieCard movie={movie} key={movie.id} />)}
+			</div>
 		</div>
 	)
 }

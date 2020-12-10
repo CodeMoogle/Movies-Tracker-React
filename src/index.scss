@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+$xs-media: 575.98px;
+$sm-media: 767.98px;
+$md-media: 991.98px;
+$lg-media: 1199.98px;
+
 :root {
 	--primary-color: #0d253f;
 	--secondary-color: #01b4e4;
 	--tertiary-color: #90cea1;
 
-	--text-color-primary: #333333;
-	--text-color-secondary: #ffffff;
+	--dark-color: #333333;
+	--white-color: #ffffff;
+
+	--card-width: 250px;
 }
 
 * {
@@ -19,4 +26,12 @@ body {
 	font-family: 'Roboto', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+// temp classes
+.movie-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 }
