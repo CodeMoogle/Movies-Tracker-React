@@ -15,6 +15,7 @@ const MovieCard = ({ movie }) => {
 				{vote_average}
 				{vote_average % 1 === 0 ? '.0' : null}
 			</span>
+			<p className='movie-card__title'>{title}</p>
 		</div>
 	)
 }

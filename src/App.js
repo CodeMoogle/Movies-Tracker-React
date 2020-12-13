@@ -13,7 +13,7 @@ function App() {
 	return (
 		<div className='App'>
 			<div className='movie-container'>
-				{movies.length && movies.map(movie => <MovieCard movie={movie} key={movie.id} />)}
+				{movies.length ? movies.map(movie => <MovieCard movie={movie} key={movie.id} />) : null}
 			</div>
 		</div>
 	)
