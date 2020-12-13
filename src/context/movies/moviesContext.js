@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from 'react'
+import React, { createContext, useReducer, useCallback } from 'react'
 import axios from 'axios'
 
 import moviesReducer from './moviesReducer'
@@ -18,11 +18,13 @@ export const MoviesState = ({ children }) => {
 
 	// db urls
 	const DB_URL = 'https://api.themoviedb.org/3/'
-	const fetchMovies = async () => {
+
+	const fetchMovies = useCallback(async () => {
+		dispatch({ type: SET_LOADING })
 		await axios
 			.get(`${DB_URL}discover/movie?sort_by=popularity.desc&api_key=${process.env.REACT_APP_API_KEY}&page=1`)
 			.then(response => dispatch({ type: FETCH_MOVIES, payload: response.data.results }))
-	}
+	}, [])
 
 	return (
 		<MoviesContext.Provider

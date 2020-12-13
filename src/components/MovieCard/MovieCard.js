@@ -1,10 +1,13 @@
 import React from 'react'
 
+import placeholder from '../../assets/placeholders/movie-card.png'
+
 import './MovieCard.scss'
 
 const MovieCard = ({ movie }) => {
-	const IMG_BASE_URL = 'https://image.tmdb.org/t/p/w500'
 	const { title, poster_path, vote_average } = movie
+
+	const IMG_BASE_URL = 'https://image.tmdb.org/t/p/w400'
 
 	return (
 		<div className='movie-card'>
